@@ -26,22 +26,29 @@
             <article class="Login">
                 <figure class="Logo-Container">
                     <img src="img/logo.png" class="Logo-image" width="150" alt="FastERP">
+                    <figcaption>FastERP</figcaption>
                 </figure>
 
                 <form action="" class="Form">
-                    <span class="Form-messages"></span>
+                    <p><span class="Form-messages">Usuario o contraseña incorrectos...</span></p>
                     <div class="Form-inputGroup">
-                        <label for="user" class="lbl"></label>
-                        <input type="text" class="inputText" id="user" placeholder="user" />
-                        <span class="Form-Icon"></span>
+                        <span class="Form-info">C</span>
+                        <label for="user" class="Form-label"></label>
+                        <input type="text" class="Form-inputText" id="user" placeholder="username" />
+                        <span class="Form-icon">F</span>
                     </div>
                     <div class="Form-inputGroup">
-                        <label for="password"></label>
-                        <input type="text" class="inputText" id="password" placeholder="password" />
-                        <span class="Form-Icon"></span>
+                        <span class="Form-info">C</span>
+                        <label for="password" class="Form-label"></label>
+                        <input type="text" class="Form-inputText" id="password" placeholder="password" />
+                        <span class="Form-icon">F</span>
                     </div>
                     <div class="Form-inputGroup">
-                        <button id="btn btn-green">Ingresar</button>
+                        <button class="btn btn-green">Ingresar</button>
+                    </div>
+                    <div class="Form-inputGroup right">
+                        <input type="checkbox" class="Form-inputCheck" id="remember" />
+                        <label for="remember" class="Form-labelCheck">Recordar Usuario</label>
                     </div>
                 </form>
             </article>
