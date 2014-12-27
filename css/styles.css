@@ -202,13 +202,15 @@ th {
   background: linear-gradient(to bottom, #0cf077 0%, #18693e 100%);
 }
 .Container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 600px;
   margin: 0 auto;
   text-align: center;
   width: 90%;
+}
+.Container-index {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .Form-inputGroup {
   color: #787878;
