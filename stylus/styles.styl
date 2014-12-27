@@ -1,6 +1,7 @@
 // @import "nib"
 @import "normalize"
 @import "variables.styl"
+@import "fonts.styl"
 /*
 ***********************
 ***********************
@@ -13,6 +14,27 @@
 	box-sizing border-box
 
 
+.Aside
+	width 20%
+	&-item
+		text-align left
+	&-list
+		padding 0
+		width 90%
+	&-listItem
+		margin 0.5em 0
+		a
+			color gray
+			font-weight 600
+			&:hover
+				color lightgreen 
+		span
+			font-size 2sem
+	&-title
+		color lightgray
+		font-size 2em
+	p
+		color gray
 .btn
 	border none
 	border-radius 0.4em
@@ -33,16 +55,61 @@
 	text-align center
 	width 90%
 	&-index
-		align-items center
+	&-principal
 		display flex
+		height 520px
+		overflow hidden
+	&-index
+		align-items center
 		height 600px
 		justify-content center
+	
+.Content
+	align-items center
+	display flex
+	flex-wrap wrap
+	position relative
+	width 80%
+	&-detail
+		display none
+		color lightblack
+		text-align left
+		width 18%
+		a
+			color gray
+			text-decoration underline
+			&:hover
+				color black
+		p
+			font-size 0.7em
+	&-detailTitle
+		font-size 0.8em
+		margin-bottom -5px
+	&-icon
+		display block
+		font-size 6.5em
+		margin-right 0.5em
+	&-item
+		cursor pointer
+		display inline-block
+		font-weight 700
+		height 100%
+		text-align left
+		width 20%
+		p
+			font-size 1.5em
+			margin 1em 0 0 0
+		&:nth-child(even)
+			p
+				margin-top 1.5em
+				font-size 1em
+	
 .Footer
 	background white
 	color gray
-	line-height 1em
+	line-height 0.5em
 	margin 0
-	padding 1em
+	padding 0.5em
 	text-align center
 .Form
 	&-inputGroup
@@ -102,6 +169,7 @@
 	flex-wrap wrap
 	justify-content center
 	height 70px
+	position relative
 	&-item
 		display inline-block
 	&-link
@@ -118,25 +186,34 @@
 	&-logo
 	&-logoUsuario
 		height 70px
-	&-LogoContainer
-		border-radius 50%
-		position relative
-	&-logoImage
-	&-logoDescription
-		position absolute
 	&-logoImage
 		top 1.5%
 	&-logoDescription
 		font-weight 600
 		right 2%
 		top 4%
+		a
+			color gray
 	&-list
+		min-width 550px;
+		max-width 720px;
+		left 10%
 		width 75%
+	&-list
+	&-logo
+	&-logoUsuario
+		position absolute
 	&-logo
 		background lightgreen
+		min-width 96px
+		max-width 96px
 		padding 0.5em 0 0.5em 1.3em
+		left 0
 		width 10%
 	&-logoUsuario
+		min-width 144px
+		max-width 144px
+		right 0
 		width 15%
 
 /**/
@@ -146,5 +223,31 @@
 .active
 	background lightgreen
 	color white
+.block
+	display block
+.hidden
+	display hidden
 .right
 	float right
+	
+#proveedorDetalle
+#ordenDeCompraDetalle
+#inventarioDetalle
+#inventarioDetalle2
+#ordenDeVentaDetalle
+#clienteDetalle
+	position absolute
+	top 65%
+#proveedorDetalle
+	left 0
+#ordenDeCompraDetalle
+	left 200px
+#inventarioDetalle
+#inventarioDetalle2
+	left 390px
+#inventarioDetalle2
+	top 0px
+#ordenDeVentaDetalle
+	left 580px
+#clienteDetalle
+	left 760px
