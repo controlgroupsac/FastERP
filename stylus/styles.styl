@@ -1,5 +1,6 @@
 // @import "nib"
 @import "normalize"
+@import "variables.styl"
 /*
 ***********************
 ***********************
@@ -15,29 +16,37 @@
 .btn
 	border none
 	border-radius 0.4em
-	color #FFF
+	color white
 	font-weight 700
 	padding 0.7em
 	width 70%
 	&-green
-		background: linear-gradient(to bottom, rgba(12,240,119,1) 0%, rgba(24,105,62,1) 100%);
+		background: linear-gradient(to bottom, lightgreen 0%, green 100%);
+		&:hover
+			background: linear-gradient(to bottom, green 0%, lightgreen 100%);
+			opacity 0.9
 
 		
 
-
-
 .Container 
-	height 600px
 	margin 0 auto
 	text-align center
 	width 90%
 	&-index
-		display flex
 		align-items center
+		display flex
+		height 600px
 		justify-content center
+.Footer
+	background white
+	color gray
+	line-height 1em
+	margin 0
+	padding 1em
+	text-align center
 .Form
 	&-inputGroup
-		color #787878
+		color gray
 		margin 0.5em
 		padding 0.1em
 	&-icon
@@ -46,13 +55,13 @@
 	&-label
 		height 3em
 	&-labelCheck
-		color #FFF
+		color white
 		font-weight 400
 		font-size 0.8em
 		margin-right 4em
 	&-icon
 	&-info
-		background #FFF
+		background white
 		margin 0
 		padding 0.5em
 	&-inputText
@@ -60,35 +69,82 @@
 		border-radius 0.4em
 		padding  0.1em 0 0 1em
 	&-info
-		border-right 1px solid #CFCFCF
+		border-right 1px solid lightgray
 		border-radius 0.5em 0 0 0.5em
 		margin-right -0.22em
 	&-icon
-		border-left 1px solid #CFCFCF
+		border-left 1px solid lightgray
 		border-radius 0 0.5em 0.5em 0
 		margin-left -0.22em
 	&-messages
-		background #FFFFCB
-		color #FF9191
+		background lightyellow
+		color lightred
 		font-weight 600
 		font-size 0.8em
 		margin-bottom 1em
 		padding 1em
-		
+.Header
+	background white
+	width 100%
 .Login
-	background #242423
+	background black
 	border-radius 0.4em
 	box-shadow 0px 0px 10px rgba(0, 0, 0, 0.3);
-	color #FFF
+	color white
 	height 500px
 	width 400px
 	
 .Logo-Container
 	border-radius 50%
-	
+
+.Menu
+	display flex
+	flex-wrap wrap
+	justify-content center
+	height 70px
+	&-item
+		display inline-block
+	&-link
+		color gray
+		display block
+		font-weight 600
+		padding 0.5em 1em
+		text-decoration none
+		transition 0.5s background 
+		&:hover			
+			background lightgreen
+			color white
+	&-list
+	&-logo
+	&-logoUsuario
+		height 70px
+	&-LogoContainer
+		border-radius 50%
+		position relative
+	&-logoImage
+	&-logoDescription
+		position absolute
+	&-logoImage
+		top 1.5%
+	&-logoDescription
+		font-weight 600
+		right 2%
+		top 4%
+	&-list
+		width 75%
+	&-logo
+		background lightgreen
+		padding 0.5em 0 0.5em 1.3em
+		width 10%
+	&-logoUsuario
+		width 15%
+
 /**/
 /**/
 /**/
 /**/
+.active
+	background lightgreen
+	color white
 .right
 	float right
