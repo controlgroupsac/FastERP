@@ -277,13 +277,13 @@ th {
 }
 .active {
   background: #c0db06;
-  color: #fff;
+  color: #fff !important;
 }
 .clear {
   clear: both;
 }
 .block {
-  display: block;
+  display: block !important;
 }
 .hidden {
   display: hidden;
@@ -297,7 +297,7 @@ th {
 .right {
   float: right;
 }
-input[type=checkbox] {
+.switch {
   -webkit-transition: background-position 0.5s ease;
   -webkit-appearance: none;
   width: 152px;
@@ -308,7 +308,7 @@ input[type=checkbox] {
   background-position: -101px -1px;
   background-image: url("../img/checkbox.png");
 }
-input[type=checkbox]:checked {
+.switch:checked {
   background-position: -1px -1px;
 }
 /*
@@ -384,6 +384,7 @@ input[type=checkbox]:checked {
   border-radius: 0.4em;
   color: #fff;
   font-weight: 600;
+  margin: 0 auto;
   width: 70%;
 }
 .btn-lg {
