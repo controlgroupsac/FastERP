@@ -288,6 +288,9 @@ th {
 .hidden {
   display: hidden;
 }
+.inline-block {
+  display: inline-block;
+}
 .left {
   float: left;
 }
@@ -342,7 +345,8 @@ th {
 #clienteDetalle {
   left: 760px;
 }
-#finalizar ~ label {
+#finalizar ~ label,
+#aprobado ~ label {
   left: 160px;
   position: absolute;
   top: 30%;
@@ -522,6 +526,8 @@ th {
 .Form-inputText,
 .Form-label {
   height: 3em;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 .Form-labelCheck {
   background: #9a9a9a;
@@ -668,6 +674,7 @@ th {
    ========================================================================== */
 .Table {
   margin: 1em 0;
+  text-align: left;
   width: 100%;
 }
 .Table-bordered th,
@@ -691,6 +698,7 @@ td {
 th {
   border-bottom: 2px solid #cfcfcf;
   font-size: 0.9em;
+  text-align: center;
   text-transform: uppercase;
   vertical-align: middle;
 }
