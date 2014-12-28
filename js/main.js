@@ -1,5 +1,5 @@
 $(function () {
-	$("#proveedor").click(function(){
+	$("#proveedor").hover(function(){
 		$("#proveedorDetalle").addClass("block");
 		$("#ordenDeCompraDetalle").removeClass("block");
 		$("#inventarioDetalle").removeClass("block");
@@ -7,7 +7,7 @@ $(function () {
 		$("#ordenDeVentaDetalle").removeClass("block");
 		$("#clienteDetalle").removeClass("block");
 	})
-	$("#ordenDeCompra").click(function(){
+	$("#ordenDeCompra").hover(function(){
 		$("#proveedorDetalle").removeClass("block");
 		$("#ordenDeCompraDetalle").addClass("block");
 		$("#inventarioDetalle").removeClass("block");
@@ -15,7 +15,7 @@ $(function () {
 		$("#ordenDeVentaDetalle").removeClass("block");
 		$("#clienteDetalle").removeClass("block");
 	})
-	$("#inventario").click(function(){
+	$("#inventario").hover(function(){
 		$("#proveedorDetalle").removeClass("block");
 		$("#ordenDeCompraDetalle").removeClass("block");
 		$("#inventarioDetalle").addClass("block");
@@ -23,7 +23,7 @@ $(function () {
 		$("#ordenDeVentaDetalle").removeClass("block");
 		$("#clienteDetalle").removeClass("block");
 	})
-	$("#ordenDeVenta").click(function(){
+	$("#ordenDeVenta").hover(function(){
 		$("#proveedorDetalle").removeClass("block");
 		$("#ordenDeCompraDetalle").removeClass("block");
 		$("#inventarioDetalle").removeClass("block");
@@ -31,7 +31,7 @@ $(function () {
 		$("#ordenDeVentaDetalle").addClass("block");
 		$("#clienteDetalle").removeClass("block");
 	})
-	$("#cliente").click(function(){
+	$("#cliente").hover(function(){
 		$("#proveedorDetalle").removeClass("block");
 		$("#ordenDeCompraDetalle").removeClass("block");
 		$("#inventarioDetalle").removeClass("block");
