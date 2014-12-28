@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="es" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="es" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="es" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="es" class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>Homepage - FastERP</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="stylesheet" href="css/styles.css" />
+
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+        <![endif]-->
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+		<header class="Header">
+			<nav class="Menu">
+				<div class="Menu-logo">
+					<figcaption class="Menu-logoContainer">
+						<img src="img/logo.png" width="50px" class="Menu-logo-image" alt="FastERP">
+					</figcaption>
+				</div>
+				<ul class="Menu-list">
+					<li class="Menu-item"><a href="homepage.html" class="Menu-link">General</a></li>
+					<li class="Menu-item"><a href="#" class="Menu-link">Ventas</a></li>
+					<li class="Menu-item"><a href="compras.html" class="Menu-link active">Compras</a></li>
+					<li class="Menu-item"><a href="#" class="Menu-link">Inventario</a></li>
+					<li class="Menu-item"><a href="#" class="Menu-link">Informe</a></li>
+				</ul>
+				<div class="Menu-logoUsuario">
+					<figcaption class="Menu-logoContainer">
+						<img src="img/logo.png" width="50px" class="Menu-logoImage" alt="FastERP">
+						<figcaption class="Menu-logoDescription"><a href="#">Usuario</a></figcaption>
+					</figcaption>
+				</div>
+			</nav>
+		</header>
+
+
+		<section class="Container Container-principal">
+			<article class="Container-item">
+				<article class="Container-item left">
+					<div class="Form-inputGroup">
+					    <label for="proveedor" class="Form-label">Proveedor</label>
+					    <input type="text" class="Form-inputText-small" id="proveedor" placeholder="username" />
+					    <span class="Form-icon icon-checkmark"></span>
+					</div>
+					<div class="Form-inputGroup left">
+					    <label for="almacen" class="Form-label">Almacen</label>
+					    <select class="Form-inputText-small" id="almacen">
+					    	<option value="">Lorem ipsum 1</option>
+					    	<option value="">Lorem ipsum 2</option>
+					    	<option value="">Lorem ipsum 3</option>
+					    	<option value="">Lorem ipsum 4</option>
+					    	<option value="">Lorem ipsum 5</option>
+					    </select>
+					    <span class="Form-icon icon-checkmark"></span>
+					    <button class="btn btn-blue btn-md">Sub Almacen</button>
+					</div>
+					<div class="Form-inputGroup left">				    
+					    <label for="moneda" class="Form-label">Moneda</label>
+					    <select class="Form-inputText-small" id="moneda">
+					    	<option value="">Lorem ipsum 1</option>
+					    	<option value="">Lorem ipsum 2</option>
+					    	<option value="">Lorem ipsum 3</option>
+					    	<option value="">Lorem ipsum 4</option>
+					    	<option value="">Lorem ipsum 5</option>
+					    </select>
+					    <span class="Form-icon icon-checkmark"></span>
+					    <button class="btn btn-blue btn-md">Soles</button>
+					</div>
+					<div class="Form-inputGroup">
+					    <label for="referencia" class="Form-label">Referencia</label>
+					    <input type="text" class="Form-inputText-small" id="referencia" placeholder="username" />
+					    <span class="Form-icon icon-checkmark"></span>
+					</div>
+				</article>
+				<article class="Container-item right">
+					<br>
+					<div class="checkbox">
+				        <label>
+				        	<input type="checkbox"> Creado
+				        	<input type="checkbox"> Recibido
+			        	</label>
+				    </div>
+					<div class="Form-inputGroup">
+					    <label for="fecha" class="Form-label">
+					    	Fecha 
+					    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					    </label>
+					    <input type="date" class="Form-inputText-small" id="fecha" />
+					    <span class="Form-icon icon-checkmark"></span>
+					</div>
+
+					<div class="Form-inputGroup">
+					    <label for="fechaPago" class="Form-label">Fecha de pago</label>
+					    <input type="date" class="Form-inputText-small" id="fechaPago" />
+					    <span class="Form-icon icon-checkmark"></span>
+					</div>
+				</article>
+			</article>
+			<article class="Container-item">
+				
+			</article>
+			<article class="Container-item">
+				
+			</article>
+		</section>
+
+		<footer class="Footer">
+			<p>Control Group SAC Derechos de autor ® 2015</p>
+		</footer>
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>

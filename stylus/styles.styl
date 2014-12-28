@@ -39,23 +39,34 @@
 	border none
 	border-radius 0.4em
 	color white
-	font-weight 700
-	padding 0.7em
+	font-weight 600
 	width 70%
+	&-lg
+		padding 0.7em
+	&-md
+		padding 0.3em
+	&-sm
+		padding 0
 	&-green
 		background: linear-gradient(to bottom, lightgreen 0%, green 100%);
 		&:hover
 			background: linear-gradient(to bottom, green 0%, lightgreen 100%);
 			opacity 0.9
+	&-blue
+		background: linear-gradient(to bottom, lightblue 0%, blue 100%);
+		&:hover
+			background: linear-gradient(to bottom, blue 0%, lightblue 100%);
+			opacity 0.9
+	
 
 		
 
-.Container 
+.Container /*Container principal es el contenedor general*/
 	margin 0 auto
 	text-align center
 	width 90%
-	&-index
-	&-principal
+	&-index /*Container index es el contenedor para el inicio de sesion*/
+	&-principal/*Container principal es el contenedor principal */
 		display flex
 		height 520px
 		overflow hidden
@@ -63,6 +74,7 @@
 		align-items center
 		height 600px
 		justify-content center
+		
 	
 .Content
 	align-items center
@@ -135,6 +147,11 @@
 		border none
 		border-radius 0.4em
 		padding  0.1em 0 0 1em
+		&-small
+			border none
+			border-radius 0.4em
+			padding  0.1em 0 0 1em
+			height 2em
 	&-info
 		border-right 1px solid lightgray
 		border-radius 0.5em 0 0 0.5em
@@ -227,6 +244,10 @@
 	display block
 .hidden
 	display hidden
+.left
+	float left
+.right
+	float right
 .right
 	float right
 	
