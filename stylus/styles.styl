@@ -14,6 +14,32 @@
 	box-sizing border-box
 
 
+	
+#proveedorDetalle
+#ordenDeCompraDetalle
+#inventarioDetalle
+#inventarioDetalle2
+#ordenDeVentaDetalle
+#clienteDetalle
+	position absolute
+	top 65%
+#proveedorDetalle
+	left 0
+#ordenDeCompraDetalle
+	left 200px
+#inventarioDetalle
+#inventarioDetalle2
+	left 390px
+#inventarioDetalle2
+	top 0px
+#ordenDeVentaDetalle
+	left 580px
+#clienteDetalle
+	left 760px
+
+
+
+
 .Aside
 	width 20%
 	&-item
@@ -48,14 +74,14 @@
 	&-sm
 		padding 0
 	&-green
-		background: linear-gradient(to bottom, lightgreen 0%, green 100%);
+		background linear-gradient(to bottom, lightgreen 0%, green 100%)
 		&:hover
-			background: linear-gradient(to bottom, green 0%, lightgreen 100%);
+			background linear-gradient(to bottom, green 0%, lightgreen 100%)
 			opacity 0.9
 	&-blue
-		background: linear-gradient(to bottom, lightblue 0%, blue 100%);
+		background linear-gradient(to bottom, lightblue 0%, blue 100%)
 		&:hover
-			background: linear-gradient(to bottom, blue 0%, lightblue 100%);
+			background linear-gradient(to bottom, blue 0%, lightblue 100%)
 			opacity 0.9
 	
 
@@ -66,7 +92,7 @@
 	text-align center
 	width 90%
 	&-index /*Container index es el contenedor para el inicio de sesion*/
-	&-principal/*Container principal es el contenedor principal */
+	&-2x/*Container principal es el contenedor principal */
 		display flex
 		height 520px
 		overflow hidden
@@ -74,6 +100,12 @@
 		align-items center
 		height 600px
 		justify-content center
+	&-item
+		&-left
+			float left			
+		&-right
+			float right			
+	
 		
 	
 .Content
@@ -115,7 +147,9 @@
 			p
 				margin-top 1.5em
 				font-size 1em
-	
+
+/* Footer
+   ========================================================================== */
 .Footer
 	background white
 	color gray
@@ -123,6 +157,9 @@
 	margin 0
 	padding 0.5em
 	text-align center
+	
+/* Forms
+   ========================================================================== */
 .Form
 	&-inputGroup
 		color gray
@@ -167,13 +204,14 @@
 		font-size 0.8em
 		margin-bottom 1em
 		padding 1em
+		
 .Header
 	background white
 	width 100%
 .Login
 	background black
 	border-radius 0.4em
-	box-shadow 0px 0px 10px rgba(0, 0, 0, 0.3);
+	box-shadow 0px 0px 10px rgba(0, 0, 0, 0.3)
 	color white
 	height 500px
 	width 400px
@@ -181,6 +219,8 @@
 .Logo-Container
 	border-radius 50%
 
+/* Menu
+   ========================================================================== */
 .Menu
 	display flex
 	flex-wrap wrap
@@ -212,8 +252,8 @@
 		a
 			color gray
 	&-list
-		min-width 550px;
-		max-width 720px;
+		min-width 550px
+		max-width 720px
 		left 10%
 		width 75%
 	&-list
@@ -233,6 +273,37 @@
 		right 0
 		width 15%
 
+/* Tables
+   ========================================================================== */
+.Table
+	margin 1em 0
+	width 100%
+	&-bordered th
+	&-bordered td 
+		border 1px solid #ddd
+	&-striped > tbody > tr:nth-child(odd) 
+		background-color lightgray
+ 	td
+ 	th
+ 		background white
+		border-top 1px solid #ddd
+		line-height 2px
+		padding 10px
+		vertical-align top
+	td
+		font-size 0.8em
+		
+    th
+		border-bottom 2px solid lightgray
+		font-size 0.9em
+		text-transform uppercase
+		vertical-align middle
+	tr:first-child > td 
+		border-top 0
+	
+
+
+/**/
 /**/
 /**/
 /**/
@@ -240,6 +311,8 @@
 .active
 	background lightgreen
 	color white
+.clear
+	clear both
 .block
 	display block
 .hidden
@@ -250,25 +323,3 @@
 	float right
 .right
 	float right
-	
-#proveedorDetalle
-#ordenDeCompraDetalle
-#inventarioDetalle
-#inventarioDetalle2
-#ordenDeVentaDetalle
-#clienteDetalle
-	position absolute
-	top 65%
-#proveedorDetalle
-	left 0
-#ordenDeCompraDetalle
-	left 200px
-#inventarioDetalle
-#inventarioDetalle2
-	left 390px
-#inventarioDetalle2
-	top 0px
-#ordenDeVentaDetalle
-	left 580px
-#clienteDetalle
-	left 760px

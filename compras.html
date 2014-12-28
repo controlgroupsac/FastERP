@@ -46,9 +46,9 @@
 		</header>
 
 
-		<section class="Container Container-principal">
+		<section class="Container Container-1x">
 			<article class="Container-item">
-				<article class="Container-item left">
+				<div class="Container-item-left">
 					<div class="Form-inputGroup">
 					    <label for="proveedor" class="Form-label">Proveedor</label>
 					    <input type="text" class="Form-inputText-small" id="proveedor" placeholder="username" />
@@ -83,13 +83,15 @@
 					    <input type="text" class="Form-inputText-small" id="referencia" placeholder="username" />
 					    <span class="Form-icon icon-checkmark"></span>
 					</div>
-				</article>
-				<article class="Container-item right">
+				</div>
+				<div class="Container-item-right">
 					<br>
 					<div class="checkbox">
 				        <label>
-				        	<input type="checkbox"> Creado
-				        	<input type="checkbox"> Recibido
+				        	<input type="checkbox" name="estado" /> Creado
+			        	</label>
+				        <label>
+				        	<input type="checkbox" name="estado" /> Recibido
 			        	</label>
 				    </div>
 					<div class="Form-inputGroup">
@@ -107,10 +109,74 @@
 					    <input type="date" class="Form-inputText-small" id="fechaPago" />
 					    <span class="Form-icon icon-checkmark"></span>
 					</div>
-				</article>
+				</div>
 			</article>
+			
+			<div class="clear"></div>
+
 			<article class="Container-item">
-				
+				<table class="Table Table-striped Table-bordered">
+					<thead>
+						<tr>
+							<th width="50%">Producto <span class="icon-embed"></span></th>
+							<th width="9%">Unidad <span class="icon-embed"></span></th>
+							<th width="8%">Cant. <span class="icon-embed"></span></th>
+							<th width="10%">Precio <span class="icon-embed"></span></th>
+							<th width="10%">Desc. <span class="icon-embed"></span></th>
+							<th width="12%">Sub Total <span class="icon-embed"></span></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Cerveza Cuzqueña blanca 610 ml</td>
+							<td>caja</td>
+							<td>32</td>
+							<td>47.00</td>
+							<td>0.00</td>
+							<td>1504.00</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
 			</article>
 			<article class="Container-item">
 				

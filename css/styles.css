@@ -285,6 +285,34 @@ th {
 *:before {
   box-sizing: border-box;
 }
+#proveedorDetalle,
+#ordenDeCompraDetalle,
+#inventarioDetalle,
+#inventarioDetalle2,
+#ordenDeVentaDetalle,
+#clienteDetalle {
+  position: absolute;
+  top: 65%;
+}
+#proveedorDetalle {
+  left: 0;
+}
+#ordenDeCompraDetalle {
+  left: 200px;
+}
+#inventarioDetalle,
+#inventarioDetalle2 {
+  left: 390px;
+}
+#inventarioDetalle2 {
+  top: 0px;
+}
+#ordenDeVentaDetalle {
+  left: 580px;
+}
+#clienteDetalle {
+  left: 760px;
+}
 .Aside {
   width: 20%;
 }
@@ -351,7 +379,7 @@ th {
   width: 90%;
 }
 .Container-index,
-.Container-principal {
+.Container-2x {
   display: flex;
   height: 520px;
   overflow: hidden;
@@ -360,6 +388,12 @@ th {
   align-items: center;
   height: 600px;
   justify-content: center;
+}
+.Container-item-left {
+  float: left;
+}
+.Container-item-right {
+  float: right;
 }
 .Content {
   align-items: center;
@@ -409,6 +443,8 @@ th {
   margin-top: 1.5em;
   font-size: 1em;
 }
+/* Footer
+   ========================================================================== */
 .Footer {
   background: #fff;
   color: #9a9a9a;
@@ -417,6 +453,8 @@ th {
   padding: 0.5em;
   text-align: center;
 }
+/* Forms
+   ========================================================================== */
 .Form-inputGroup {
   color: #9a9a9a;
   margin: 0.5em;
@@ -484,6 +522,8 @@ th {
 .Logo-Container {
   border-radius: 50%;
 }
+/* Menu
+   ========================================================================== */
 .Menu {
   display: flex;
   flex-wrap: wrap;
@@ -547,6 +587,40 @@ th {
   right: 0;
   width: 15%;
 }
+/* Tables
+   ========================================================================== */
+.Table {
+  margin: 1em 0;
+  width: 100%;
+}
+.Table-bordered th,
+.Table-bordered td {
+  border: 1px solid #ddd;
+}
+.Table-striped > tbody > tr:nth-child(odd) {
+  background-color: #cfcfcf;
+}
+td,
+th,
+background white {
+  border-top: 1px solid #ddd;
+  line-height: 2px;
+  padding: 10px;
+  vertical-align: top;
+}
+td {
+  font-size: 0.8em;
+}
+th {
+  border-bottom: 2px solid #cfcfcf;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+tr:first-child > td {
+  border-top: 0;
+}
+/**/
 /**/
 /**/
 /**/
@@ -554,6 +628,9 @@ th {
 .active {
   background: #c0db06;
   color: #fff;
+}
+.clear {
+  clear: both;
 }
 .block {
   display: block;
@@ -569,32 +646,4 @@ th {
 }
 .right {
   float: right;
-}
-#proveedorDetalle,
-#ordenDeCompraDetalle,
-#inventarioDetalle,
-#inventarioDetalle2,
-#ordenDeVentaDetalle,
-#clienteDetalle {
-  position: absolute;
-  top: 65%;
-}
-#proveedorDetalle {
-  left: 0;
-}
-#ordenDeCompraDetalle {
-  left: 200px;
-}
-#inventarioDetalle,
-#inventarioDetalle2 {
-  left: 390px;
-}
-#inventarioDetalle2 {
-  top: 0px;
-}
-#ordenDeVentaDetalle {
-  left: 580px;
-}
-#clienteDetalle {
-  left: 760px;
 }
