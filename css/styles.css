@@ -294,6 +294,12 @@ th {
 .left {
   float: left;
 }
+.radius {
+  color: #fff;
+  background: #cfcfcf;
+  border-radius: 50%;
+  padding: 0.25em 0.5em;
+}
 .right {
   float: right;
 }
@@ -302,6 +308,15 @@ th {
 }
 .text-left {
   text-align: left;
+}
+.text-sm {
+  font-size: 0.7em;
+}
+.text-md {
+  font-size: 1em;
+}
+.text-lg {
+  font-size: 1.5em;
 }
 .text-right {
   text-align: right;
@@ -421,6 +436,13 @@ th {
   background: linear-gradient(to bottom, #18693e 0%, #c0db06 100%);
   opacity: 0.9;
 }
+.btn-gray {
+  background: linear-gradient(to bottom, #cfcfcf 0%, #9a9a9a 100%);
+}
+.btn-gray:hover {
+  background: linear-gradient(to bottom, #9a9a9a 0%, #cfcfcf 100%);
+  opacity: 0.9;
+}
 .btn-blue {
   background: linear-gradient(to bottom, #92b6da 0%, #326496 100%);
 }
@@ -448,10 +470,12 @@ th {
   justify-content: center;
 }
 .Container-item-left {
+  background: right;
   float: left;
   text-align: left;
 }
 .Container-item-right {
+  background: right;
   float: right;
   text-align: right;
 }

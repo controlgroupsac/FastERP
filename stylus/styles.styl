@@ -85,6 +85,11 @@
 		&:hover
 			background linear-gradient(to bottom, green 0%, lightgreen 100%)
 			opacity 0.9
+	&-gray
+		background linear-gradient(to bottom, lightgray 0%, gray 100%)
+		&:hover
+			background linear-gradient(to bottom, gray 0%, lightgray 100%)
+			opacity 0.9
 	&-blue
 		background linear-gradient(to bottom, lightblue 0%, blue 100%)
 		&:hover
@@ -92,7 +97,6 @@
 			opacity 0.9
 	
 
-		
 
 .Container /*Container principal es el contenedor general*/
 	margin 0 auto
@@ -111,9 +115,11 @@
 		justify-content center
 	&-item
 		&-left
-			float left			
+			background right
+			float left
 			text-align left
 		&-right
+			background right
 			float right
 			text-align right
 	
