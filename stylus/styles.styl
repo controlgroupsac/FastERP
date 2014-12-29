@@ -137,6 +137,23 @@
 		display flex
 		height 520px
 		overflow hidden
+	&-categories
+	&-products
+		border 1px solid gray
+		display inline-block
+		height 173px
+		overflow scroll
+		a
+			display block
+		img
+			width 50px
+			margin -0.5em 0 0 -2em
+		&:first-child
+			border-right none
+	&-categories
+		width 20%
+	&-categoriesItem
+		width 100%
 	&-index
 		align-items center
 		height 600px
@@ -150,8 +167,14 @@
 			background right
 			float right
 			text-align right
-	
-		
+	&-listProducts
+		display flex
+	&-products
+		display flex
+		flex-wrap wrap
+		width 83%
+	&-productsItem
+		width 18%
 	
 .Content
 	align-items center
@@ -274,6 +297,33 @@
 .Header
 	background white
 	width 100%
+	
+.img
+	vertical-align: middle;
+	&-categoriesItem
+		width 100px
+	&-circle
+		border-radius: 50%;
+	&-responsive
+		display block
+		height auto
+	&-rounded
+		border 1px solid lightgray
+		padding 0.1em
+		border-radius: 6px;
+	&-thumbnail
+		display: inline-block;
+		max-width: 100%;
+		height: auto;
+		padding: 4px;
+		line-height: 1.42857143;
+		background-color: #fff;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		transition: all .2s ease-in-out;
+	&-productsItem
+		width 80px
+		
 .Login
 	background black
 	border-radius 0.4em
