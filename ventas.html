@@ -51,8 +51,8 @@
 			<article class="Container-item">
 				<div class="Container-item-left">
 					<div class="Form-inputGroup">			    
-					    <label for="´punto" class="Form-label text-sm">Punto de Venta</label>
-					    <select class="Form-inputText-small Form-select" id="´punto">
+					    <label for="punto" class="Form-label text-sm">Punto de Venta</label>
+					    <select class="Form-inputText-small Form-select" id="punto">
 					    	<option value="">PEN</option>
 					    	<option value="">USD</option>
 					    </select>
@@ -218,44 +218,55 @@
 			<div class="clear"></div>
 
 			<article class="Container-item">
-				<div class="Container-item-left">
+				<div class="Container-item-left col-5x">
 					<div class="Container-list-Pay">
-						<button>Agregar Pago</button>
+						<button class="btn btn-gray">Agregar Pago</button>
 						<span>Pendiente de Pago S/. 2.00</span>
 						<p>Efectivo S/. 5.00</p>
 						<p>Tarjeta de Crédito Visa S/. 5.00</p>
 						<p>Vuelto S/. 5.00</p>
-						<p>Pag%F3 con S/. 10.00</p>
-						<select name="" id="">
-							<option value="">Ticket Factura</option>
-							<option value="">Boleta de Venta</option>
-							<option value="">Factura</option>
-						</select>
+						<p>
+							Pagó con S/. 10.00
+
+						</p>
+						<div class="Form-inputGroup">			    
+							<select class="Form-inputText-small Form-select inline-block" id="comprobante">
+								<option value="">Ticket Factura</option>
+								<option value="">Boleta de Venta</option>
+								<option value="">Factura</option>
+							</select>
+						</div>
 					</div>
-					<button>Devolucion</button>
-					<button>Fusionar Cuentas</button>
-					<button>Dividir Cuentas</button>
+					<button class="btn btn-gray">Devolucion</button> 
+					<button class="btn btn-gray">Fusionar Cuentas</button> 
+					<button class="btn btn-gray">Dividir Cuentas</button> 
 				</div>
-				<div class="Container-item-right">
-					<div class="Container-Description">
-						<p class="Descrption-category">Cerveza</p>
-						<p class="Descrption-product">Cuzqueña 1100ml</p>
-						<p class="Descrption-cantidadPrecio">Caja S/. 52.00</p>
-						<p class="Description-oferta">Oferta 2x1</p>
+				<div class="Container-item-right col-5x">
+					<div class="Container-info"> <!-- Container con la informacion de el total de la venta y la descripción -->
+						<div class="Container-infoDescription col-5x">
+							<p class="Descrption-category">Cerveza</p>
+							<p class="Descrption-product">Cuzqueña 1100ml</p>
+							<p class="Descrption-cantidadPrecio">Caja S/. 52.00</p>
+							<p class="Description-oferta">Oferta 2x1</p>
+						</div>
+						<div class="Container-infoTotalPagar col-5x">
+							<p><label>Sub total.......... </label><span>10.17</span></p>
+							<p><label>Impuestos.......... </label><span>1.83</span></p>
+							<p><label>Descuentos.......... </label><span>0.00</span></p>
+							<p><label>Servicio.......... </label><span>0.00</span></p>
+							<p><label>Propina.......... </label><span>0.00</span></p>
+							<p><label>Total.......... </label><span>12.00</span></p>
+						</div>
 					</div>
-					<div class="Container-totalPagar">
-						<p><label>Sub total</label> <span>10.17</span></p>
-						<p><label>Impuestos</label> <span>1.83</span></p>
-						<p><label>Descuentos</label> <span>0.00</span></p>
-						<p><label>Servicio</label> <span>0.00</span></p>
-						<p><label>Propina</label> <span>0.00</span></p>
-						<p><label>Total</label> <span>12.00</span></p>
-					</div>
-					<div class="Container-comentarios">
-						<button>Anular</button>
-						<button>Imprimir</button>
-						<button>Nueva Venta</button>
-						<textarea name="" id="" cols="30" rows="10" placeholder="Comentarios"></textarea>
+					<div class="Container-comments">
+						<div class="col-5x">
+							<button class="btn btn-gray">Anular</button>
+							<button class="btn btn-gray">Imprimir</button>
+							<button class="btn btn-gray">Nueva Venta</button>
+						</div>
+						<div class="col-4x">
+							<textarea cols="30" rows="3" placeholder="Comentarios"></textarea>
+						</div>
 					</div>
 				</div>
 			</article>
@@ -263,7 +274,7 @@
 			<div class="clear"></div>
 
 			<article class="Container-item">
-				<p id="Container-descripcionVenta">3 Ventas - Ultima Venta: Ticket N° A00120, Luis Saravia, S/. 302.00</p>
+				<p id="Container-descripcionVenta" class="Container-descripcionVenta">3 Ventas - Ultima Venta: Ticket N° A00120, Luis Saravia, S/. 302.00</p>
 			</article>
 			
 			<div class="clear"></div>

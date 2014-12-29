@@ -443,7 +443,15 @@ th {
 }
 .btn-block {
   display: block;
+}
+.btn-block-100 {
   width: 100%;
+}
+.btn-block-50 {
+  width: 50%;
+}
+.btn-block-75 {
+  width: 75%;
 }
 .btn-lg {
   padding: 0.7em;
@@ -482,6 +490,11 @@ th {
   background: linear-gradient(to bottom, #326496 0%, #92b6da 100%);
   opacity: 0.9;
 }
+/**/
+/**/
+/*ANCHO DE CONTAINER DISTRIBUIDO EN 10 POSIBLES SECCIONES*/
+/**/
+/**/
 .col-1x {
   width: 10%;
 }
@@ -512,7 +525,11 @@ th {
 .col-10x {
   width: 100%;
 }
+/**/
+/**/
+/*Container*/
 .Container {
+  background: #fff;
   margin: 0 auto;
   text-align: center;
   width: 90%;
@@ -552,6 +569,45 @@ th {
 .Container-categoriesItem {
   width: 100%;
 }
+.Container-comments {
+  align-items: flex-end;
+  display: flex;
+  justify-content: center;
+}
+.Container-comments div:first-child {
+  margin-bottom: 0.4em;
+}
+.Container-comments textarea {
+  border-radius: 0.5em;
+  resize: none;
+}
+.Container-descripcionVenta {
+  background: #9a9a9a;
+  border: 1px solid #000;
+  padding: 0.5em 1em;
+  text-align: left;
+}
+.Container-info {
+  display: flex;
+  font-size: 0.8em;
+}
+.Container-infoDescription,
+.Container-infoTotalPagar {
+  border-radius: 1em;
+  margin: 1em;
+  padding: 0 1em;
+}
+.Container-infoDescription {
+  border: 4px dashed #cfcfcf;
+  text-align: left;
+}
+.Container-infoTotalPagar {
+  border: 4px solid #cfcfcf;
+}
+.Container-infoTotalPagar p:last-child {
+  font-size: 1.5em;
+  font-weight: 800;
+}
 .Container-index {
   align-items: center;
   height: 600px;
@@ -566,6 +622,16 @@ th {
   background: right;
   float: right;
   text-align: right;
+}
+.Container-list-Pay {
+  background: #cfcfcf;
+  font-size: 0.8em;
+  margin: 0.5em 0;
+  padding: 0.5em;
+}
+.Container-list-Pay p:last-child {
+  width: 50%;
+  display: inline-block block;
 }
 .Container-listProducts {
   display: flex;
