@@ -71,15 +71,23 @@
 	border none
 	border-radius 0.4em
 	color white
+	display inline-block
 	font-weight 600
-	margin 0 auto
-	width 70%
+	padding 6px 12px !important
+	&-block
+		display block
+		width 100%
 	&-lg
 		padding 0.7em
 	&-md
 		padding 0.3em
 	&-sm
 		padding 0
+	&-black
+		background linear-gradient(to bottom, lightblack 0%, black 100%)
+		&:hover
+			background linear-gradient(to bottom, black 0%, lightblack 100%)
+			opacity 0.9
 	&-green
 		background linear-gradient(to bottom, lightgreen 0%, green 100%)
 		&:hover
@@ -96,7 +104,27 @@
 			background linear-gradient(to bottom, blue 0%, lightblue 100%)
 			opacity 0.9
 	
-
+	
+.col-1x
+	width 10%
+.col-2x
+	width 20%
+.col-3x
+	width 30%
+.col-4x
+	width 40%
+.col-5x
+	width 50%
+.col-6x
+	width 60%
+.col-7x
+	width 70%
+.col-8x
+	width 80%
+.col-9x
+	width 90%
+.col-10x
+	width 100%
 
 .Container /*Container principal es el contenedor general*/
 	margin 0 auto

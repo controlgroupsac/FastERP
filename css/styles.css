@@ -416,9 +416,13 @@ th {
   border: none;
   border-radius: 0.4em;
   color: #fff;
+  display: inline-block;
   font-weight: 600;
-  margin: 0 auto;
-  width: 70%;
+  padding: 6px 12px !important;
+}
+.btn-block {
+  display: block;
+  width: 100%;
 }
 .btn-lg {
   padding: 0.7em;
@@ -428,6 +432,13 @@ th {
 }
 .btn-sm {
   padding: 0;
+}
+.btn-black {
+  background: linear-gradient(to bottom, #6c6c6a 0%, #000 100%);
+}
+.btn-black:hover {
+  background: linear-gradient(to bottom, #000 0%, #6c6c6a 100%);
+  opacity: 0.9;
 }
 .btn-green {
   background: linear-gradient(to bottom, #c0db06 0%, #18693e 100%);
@@ -449,6 +460,36 @@ th {
 .btn-blue:hover {
   background: linear-gradient(to bottom, #326496 0%, #92b6da 100%);
   opacity: 0.9;
+}
+.col-1x {
+  width: 10%;
+}
+.col-2x {
+  width: 20%;
+}
+.col-3x {
+  width: 30%;
+}
+.col-4x {
+  width: 40%;
+}
+.col-5x {
+  width: 50%;
+}
+.col-6x {
+  width: 60%;
+}
+.col-7x {
+  width: 70%;
+}
+.col-8x {
+  width: 80%;
+}
+.col-9x {
+  width: 90%;
+}
+.col-10x {
+  width: 100%;
 }
 .Container {
   margin: 0 auto;
