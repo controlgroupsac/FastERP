@@ -39,4 +39,14 @@ $(function () {
 		$("#ordenDeVentaDetalle").removeClass("block");
 		$("#clienteDetalle").addClass("block");
 	})
-})
+});
+
+$(function({
+	$('#myModal').jBox('Modal', {
+	    ajax: {
+	        url: 'compras.php',
+	        data: 'id=1',
+	        reload: true
+	    }
+	});
+}))

@@ -1,3 +1,6 @@
+<?php include("../queries/query.php"); ?>
+
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html lang="es" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="es" class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -11,6 +14,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <link rel="stylesheet" href="css/styles.css" />
+
+		<!-- // <script type="text/javascript" src="js/vendor/modernizr.custom.47114.js"></script> -->
 
         <!--[if lt IE 9]>
             <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -30,9 +35,9 @@
 					</figcaption>
 				</div>
 				<ul class="Menu-list">
-					<li class="Menu-item"><a href="homepage.html" class="Menu-link">General</a></li>
-					<li class="Menu-item"><a href="ventas.html" class="Menu-link">Ventas</a></li>
-					<li class="Menu-item"><a href="compras.html" class="Menu-link active">Compras</a></li>
+					<li class="Menu-item"><a href="homepage.php" class="Menu-link">General</a></li>
+					<li class="Menu-item"><a href="ventas.php" class="Menu-link">Ventas</a></li>
+					<li class="Menu-item"><a href="compras.php" class="Menu-link active">Compras</a></li>
 					<li class="Menu-item"><a href="#" class="Menu-link">Inventario</a></li>
 					<li class="Menu-item"><a href="#" class="Menu-link">Informe</a></li>
 				</ul>
@@ -52,28 +57,24 @@
 				<div class="Container-item-left">
 					<div class="Form-inputGroup">
 					    <label for="proveedor" class="Form-label">Proveedor</label>
-					    <input type="text" class="Form-inputText-small" size="40" id="proveedor" placeholder="Proveedor" value="UNIÓN DE CERVECERÍAS PERUANAS BACKUS Y JOHNSTON SAA" />
+					    <select class="Form-inputText-small Form-select" name="proveedor" id="proveedor">
+					    	<?php query_table_option("SELECT * FROM proveedor ORDER BY proveedor", 'proveedor_id', 'proveedor'); ?>
+					    </select>
 					    <span class="Form-icon icon-checkmark"></span>
 					    <button class="btn btn-blue">Nuevo</button>
 					</div>
 					<div class="Form-inputGroup inline-block">
 					    <label for="almacen" class="Form-label">Almacen</label>
-					     <select class="Form-inputText-small Form-select" id="almacen">
-					    	<option value="">Central</option>
-					    	<option value="">Sur</option>
-					    	<option value="">Norte</option>
-					    	<option value="">Centro</option>
-					    	<option value="">Este</option>
+					     <select class="Form-inputText-small Form-select" name="almacen" id="almacen">
+					    	<?php query_table_option("SELECT * FROM almacen ORDER BY almacen", 'almacen_id', 'almacen'); ?>
 					    </select>
-					    <button class="btn btn-blue btn-md">Sub Almacen</button>
 					</div>
 					<div class="Form-inputGroup inline-block">				    
 					    <label for="moneda" class="Form-label">Moneda</label>
 					    <select class="Form-inputText-small Form-select" id="moneda">
-					    	<option value="">Soles</option>
-					    	<option value="">Dolares</option>
+					    	<option value="soles">Soles</option>
+					    	<option value="dolares">Dolares</option>
 					    </select>
-					    <button class="btn btn-blue btn-md">Dolares</button>
 					</div>
 					<div class="Form-inputGroup">
 					    <label for="referencia" class="Form-label">Referencia</label>
@@ -216,7 +217,9 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
-
+		<link rel="stylesheet" type="text/css" href="js/vendor/jBox.css">
+	    <link rel="stylesheet" type="text/css" href="js/vendor/theme/ModalBorder.css">
+	    <script type="text/javascript" src="js/vendor/jBox.min.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>

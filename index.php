@@ -10,7 +10,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="views/css/styles.css" />
 
         <!--[if lt IE 9]>
             <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -25,11 +25,11 @@
         <section class="Container Container-index">
             <article class="Login">
                 <figure class="Logo-Container">
-                    <img src="img/logo.png" class="Logo-image" width="150" alt="FastERP">
+                    <img src="views/img/logo.png" class="Logo-image" width="150" alt="FastERP">
                     <!-- <figcaption>FastERP</figcaption> -->
                 </figure>
 
-                <form action="homepage.html" class="Form">
+                <form action="views/homepage.php" class="Form">
                     <p><span class="Form-messages">Usuario o contraseña incorrectos...</span></p>
                     <div class="Form-inputGroup">
                         <span class="Form-info icon-user"></span>
@@ -58,7 +58,7 @@
         </section>
 
         <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
-        <script src="js/main.js"></script> -->
+        <script>window.jQuery || document.write('<script src="views/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+        <script src="views/js/main.js"></script> -->
     </body>
 </html>

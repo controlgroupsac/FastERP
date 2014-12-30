@@ -30,9 +30,9 @@
 					</figcaption>
 				</div>
 				<ul class="Menu-list">
-					<li class="Menu-item"><a href="homepage.html" class="Menu-link">General</a></li>
-					<li class="Menu-item"><a href="ventas.html" class="Menu-link">Ventas</a></li>
-					<li class="Menu-item"><a href="compras.html" class="Menu-link active">Compras</a></li>
+					<li class="Menu-item"><a href="homepage.php" class="Menu-link">General</a></li>
+					<li class="Menu-item"><a href="ventas.php" class="Menu-link">Ventas</a></li>
+					<li class="Menu-item"><a href="compras.php" class="Menu-link active">Compras</a></li>
 					<li class="Menu-item"><a href="#" class="Menu-link">Inventario</a></li>
 					<li class="Menu-item"><a href="#" class="Menu-link">Informe</a></li>
 				</ul>
