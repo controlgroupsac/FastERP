@@ -33,7 +33,7 @@ if (!function_exists("GetSQLValueString")) {
 }
 }
 
-function query_table_campo($query, $campo){
+function query_table_campo($query, $campo){ /*Consulta de una tabla a un solo campo*/
     include("../config/conexion.php");
 
     mysql_select_db($database_fastERP, $fastERP);
@@ -46,7 +46,7 @@ function query_table_campo($query, $campo){
     }while ($row_table = mysql_fetch_assoc($table));
 }
 
-function query_table_option($query, $id, $campo){
+function query_table_option($query, $id, $campo){ /*Consuta de una tabla, parametros seleccionados para un option en una etiqueta <select>*/
     include("../config/conexion.php");
 
     mysql_select_db($database_fastERP, $fastERP);
@@ -59,7 +59,7 @@ function query_table_option($query, $id, $campo){
     }while ($row_table = mysql_fetch_assoc($table));
 }
 
-function query_table_optionlist($query, $campo){
+function query_table_optionlist($query, $campo){/*Consuta de una tabla, parametros seleccionados para un option en una etiqueta <select>*/
     include("../config/conexion.php");
 
     mysql_select_db($database_fastERP, $fastERP);
@@ -72,5 +72,12 @@ function query_table_optionlist($query, $campo){
     }while ($row_table = mysql_fetch_assoc($table));
 }
 
+function insert_table($query) {
+    include("../config/conexion.php");
 
+    $insertSQL = sprintf($query);
+
+    mysql_select_db($database_fastERP, $fastERP);
+    $Result1 = mysql_query($insertSQL, $fastERP) or die(mysql_error());
+}
 ?>

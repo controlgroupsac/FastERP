@@ -41,12 +41,15 @@ $(function () {
 	})
 });
 
-$(function({
-	$('#myModal').jBox('Modal', {
+$(function () {
+	$('#nuevoProveedor').jBox('Modal', {
 	    ajax: {
-	        url: 'compras.php',
+	        url: '../models/compras-proveedor.php',
 	        data: 'id=1',
-	        reload: true
+	        reload: false,
+	        getData: 'data-ajax',
+            setContent: true,
+            spinner: true
 	    }
 	});
-}))
+});

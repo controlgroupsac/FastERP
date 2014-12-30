@@ -23,7 +23,7 @@
         <![endif]-->
 
         <section class="Container Container-index">
-            <article class="Login">
+            <article class="Login Login-black">
                 <figure class="Logo-Container">
                     <img src="views/img/logo.png" class="Logo-image" width="150" alt="FastERP">
                     <!-- <figcaption>FastERP</figcaption> -->

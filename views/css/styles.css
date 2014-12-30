@@ -816,12 +816,19 @@ th {
   width: 80px;
 }
 .Login {
-  background: #000;
   border-radius: 0.4em;
   box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
   color: #fff;
   height: 500px;
   width: 400px;
+}
+.Login-black {
+  height: 500px;
+  background: #000;
+}
+.Login-white {
+  height: auto;
+  background: #cfcfcf;
 }
 .Logo-Container {
   border-radius: 50%;

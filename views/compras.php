@@ -61,7 +61,7 @@
 					    	<?php query_table_option("SELECT * FROM proveedor ORDER BY proveedor", 'proveedor_id', 'proveedor'); ?>
 					    </select>
 					    <span class="Form-icon icon-checkmark"></span>
-					    <button class="btn btn-blue">Nuevo</button>
+					    <button class="btn btn-blue" id="nuevoProveedor">Nuevo</button>
 					</div>
 					<div class="Form-inputGroup inline-block">
 					    <label for="almacen" class="Form-label">Almacen</label>
@@ -218,7 +218,6 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
 		<link rel="stylesheet" type="text/css" href="js/vendor/jBox.css">
-	    <link rel="stylesheet" type="text/css" href="js/vendor/theme/ModalBorder.css">
 	    <script type="text/javascript" src="js/vendor/jBox.min.js"></script>
         <script src="js/main.js"></script>
     </body>
