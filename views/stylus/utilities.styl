@@ -11,7 +11,7 @@
 .block
 	display block !important
 .hidden
-	display hidden
+	display hidden !important
 .inline-block
 	display inline-block
 .left
@@ -68,6 +68,70 @@
 
 .switch:checked
 	background-position -1px -1px
+	
+
+
+
+
+
+/**/
+/**/
+/**/
+/* BEGIN POP UP AUTOCOMPLETE ----Global---- */
+/**/
+/**/
+/**/
+.ac_results
+  padding 0px
+  border 1px solid #7FB7FB
+  overflow hidden
+  background-color #AFD2FD
+  ul
+    width 100%
+    list-style-position outside
+    list-style none
+    padding 0
+    margin 0
+  iframe
+    display none
+    display block
+    position absolute
+    top 0
+    left 0
+    z-index -1
+    filter mask()
+    width 3000px
+    height 3000px
+  li
+    margin 0px
+    padding 2px 5px
+    cursor pointer
+    display block
+    width 100%
+    font menu
+    font-size 12px
+    overflow hidden
+
+.ac_loading
+  background #AFD2FD url('img/load.gif') right center no-repeat
+
+.ac_over
+  background-color white
+  color black
+
+
+
+/**/
+/**/
+/**/
+/* END POP UP AUTOCOMPLETE ----Global---- */
+/**/
+/**/
+/**/
+
+
+
+
 /**/
 /**/
 /*END UTILITIES*/

@@ -35,11 +35,12 @@
 					<li class="Menu-item"><a href="compras.php" class="Menu-link">Compras</a></li>
 					<li class="Menu-item"><a href="#" class="Menu-link">Inventario</a></li>
 					<li class="Menu-item"><a href="#" class="Menu-link">Informe</a></li>
+					<li class="Menu-item"><a href="#" class="Menu-link">Ayuda</a></li>
 				</ul>
 				<div class="Menu-logoUsuario">
 					<figcaption class="Menu-logoContainer">
 						<img src="img/user.png" width="50px" class="Menu-logoImage" alt="FastERP">
-						<figcaption class="Menu-logoDescription"><a href="#">Usuario</a></figcaption>
+						<figcaption class="Menu-logoDescription"><a href="#">D.Rojas</a></figcaption>
 					</figcaption>
 				</div>
 			</nav>
@@ -68,12 +69,9 @@
 				</div>
 				<div class="Container-item-right">
 					<div class="Form-inputGroup">
-					    <label for="#" class="Form-label text-sm">D. Rojas</label> 
-					    <button class="btn btn-gray btn-sm">Cambiar Usuario</button> 
 					    <label for="#" class="Form-label text-sm">jue 1/1/2015</label> 
 					    <label for="#" class="Form-label text-sm radius"><a href="#">?</a></label> 
 					    <button class="btn btn-gray btn-sm">Cierre de Caja</button> 
-					    <button class="btn btn-gray btn-sm">Cerrar</button> 
 					</div>
 				</div>
 			</article>
@@ -82,15 +80,15 @@
 
 			<article class="Container-item">
 				<div class="Container-item-left col-6x">
-					<div class="Form-inputGroup inline-block">
-					    <input type="text" class="Form-inputText-small" id="mesa" placeholder="Mesa" />
+					<div class="Form-inputGroup block">
+					    <input type="text" class="Form-inputText-small" size="40" id="mesa" placeholder="Mesa" />
 					    <span class="Form-icon icon-checkmark"></span>
 					</div>
-					<div class="Form-inputGroup inline-block">
-					    <input type="text" class="Form-inputText-small" id="cliente" placeholder="cliente" />
+					<div class="Form-inputGroup block">
+					    <input type="text" class="Form-inputText-small" size="40" id="cliente" placeholder="cliente" />
 					    <span class="Form-icon icon-checkmark"></span>
-					</div>
 						<button class="btn btn-gray btn-small" id="nuevoCliente">Nuevo Cliente</button>
+					</div>
 					
 					<table class="Table Table-striped Table-bordered">
 						<thead>

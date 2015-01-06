@@ -35,6 +35,7 @@
 					<li class="Menu-item"><a href="compras.php" class="Menu-link">Compras</a></li>
 					<li class="Menu-item"><a href="#" class="Menu-link">Inventario</a></li>
 					<li class="Menu-item"><a href="#" class="Menu-link">Informe</a></li>
+					<li class="Menu-item"><a href="#" class="Menu-link">Ayuda</a></li>
 				</ul>
 				<div class="Menu-logoUsuario">
 					<figcaption class="Menu-logoContainer">

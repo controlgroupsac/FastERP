@@ -11,6 +11,7 @@ body {
   position: relative;
 }
 a {
+  cursor: pointer;
   text-decoration: none;
 }
 li {
@@ -286,7 +287,7 @@ th {
   display: block !important;
 }
 .hidden {
-  display: hidden;
+  display: hidden !important;
 }
 .inline-block {
   display: inline-block;
@@ -610,7 +611,6 @@ th {
 }
 .Container-index {
   align-items: center;
-  height: 600px;
   justify-content: center;
 }
 .Container-item-left {
@@ -918,7 +918,7 @@ background white {
   border-top: 1px solid #ddd;
   line-height: 2px;
   padding: 10px;
-  vertical-align: top;
+  vertical-align: center;
 }
 td {
   font-size: 0.8em;

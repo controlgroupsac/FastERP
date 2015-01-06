@@ -7,23 +7,86 @@
 </head>
 <body>
 	
-	<div class="demo">
-		<span style="cursor: pointer" id="myModal">Click me!</span>
-	</div>
+  	<div class="Container Container-index hidden" id="almacenProveedor">
+        <div class="Login Login-white">
+            <form action="#" class="Form" id="Form" accept-charset="utf-8">
+                <div class="Form-inputGroup">
+                    <span class="Form-info icon-user"></span>
+                    <label for="almacen" class="Form-label"></label>
+                    <input type="text" class="Form-inputText" name="almacen" id="almacen" placeholder="almacen" value="almace" />
+                </div>
+                <div class="Form-inputGroup">
+                    <span class="Form-info icon-user"></span>
+                    <label for="ubicacion" class="Form-label"></label>
+                    <input type="text" class="Form-inputText" name="ubicacion" id="ubicacion" placeholder="ubicacion" value="ubicacio" />
+                </div>
+                <div class="Form-inputGroup">
+                    <span class="Form-info icon-lock"></span>
+                    <label for="dependencia" class="Form-label"></label>
+                    <input type="text" class="Form-inputText" name="dependencia" id="dependencia" placeholder="dependencia" value="dependenci" />
+                </div>
+                <div class="Form-inputGroup">
+                    <button class="btn btn-green btn-lg btn-block-75" id="registrarProveedor">Registrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
+    <div id="resultado"></div>
+	
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
     <link rel="stylesheet" type="text/css" href="js/vendor/jBox.css">
-    <link rel="stylesheet" type="text/css" href="js/vendor/theme/ModalBorder.css">
-    <script type="text/javascript" src="js/vendor/jBox.min.js"></script>
+
+    <!-- <script type="text/javascript" src="js/vendor/jBox.min.js"></script> -->
     <script type="text/javascript">
-    	$('#myModal').jBox('Modal', {
-    	    ajax: {
-    	        url: 'compras.php',
-    	        data: 'id=1',
-    	        reload: true
-    	    }
-    	});
+    	// $('#myModal').jBox('Modal', {
+    	//     ajax: {
+    	//         url: 'compras.php',
+    	//         data: 'id=1',
+    	//         reload: true
+    	//     }
+    	// });
+
+    	$(function () {
+            $("#Form").on("submit", function () {
+                var almacen = document.getElementById("almacen").value;
+                var ubicacion = document.getElementById("ubicacion").value;
+                var dependencia = document.getElementById("dependencia").value;
+                console.log(data);
+
+                var data = {
+                    'almacen': almacen,
+                    'ubicacion': ubicacion,
+                    'dependencia': dependencia
+                }
+                $.ajax({
+                    async:true,
+                    type: "POST",
+                    dataType: "html",
+                    contentType: "application/x-www-form-urlencoded",
+                    url:"practica.php",     
+                    data: data,
+                    beforeSend:inicioEnvio,
+                    success:llegadaDatos,
+                    timeout:4000,
+                    error:problemas
+                });
+                return false
+            });
+
+              function inicioEnvio () {
+                  $("#resultado").html("<img src='img/load.gif' />");
+              }
+
+              function llegadaDatos (datos) {
+                  $("#resultado").text(datos);
+              }
+
+              function problemas () {
+                  $("#resultado").text("Problemas en el servidor...");
+              }
+          });
     </script>
 </body>
 </html>

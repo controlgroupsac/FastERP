@@ -33,6 +33,20 @@ if (!function_exists("GetSQLValueString")) {
 }
 }
 
+function query_array($query, $id, $campo){ /*Consulta de una tabla para crear un array con el ID y su CAMPO*/
+    include("../config/conexion.php");
+
+    mysql_select_db($database_fastERP, $fastERP);
+    $table = mysql_query($query, $fastERP) or die(mysql_error());
+    $totalRows_table = mysql_num_rows($table);
+    $row_table = mysql_fetch_assoc($table);
+
+    $items = array();
+    do{
+        $items[$row_table[$id]] = $row_table[$campo];
+    }while ($row_table = mysql_fetch_assoc($table));
+}
+
 function query_table_campo($query, $campo){ /*Consulta de una tabla a un solo campo*/
     include("../config/conexion.php");
 

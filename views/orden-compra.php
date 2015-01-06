@@ -35,11 +35,12 @@
 					<li class="Menu-item"><a href="compras.php" class="Menu-link active">Compras</a></li>
 					<li class="Menu-item"><a href="#" class="Menu-link">Inventario</a></li>
 					<li class="Menu-item"><a href="#" class="Menu-link">Informe</a></li>
+					<li class="Menu-item"><a href="#" class="Menu-link">Ayuda</a></li>
 				</ul>
 				<div class="Menu-logoUsuario">
 					<figcaption class="Menu-logoContainer">
 						<img src="img/user.png" width="50px" class="Menu-logoImage" alt="FastERP">
-						<figcaption class="Menu-logoDescription"><a href="#">Usuario</a></figcaption>
+						<figcaption class="Menu-logoDescription"><a href="#">D.Rojas</a></figcaption>
 					</figcaption>
 				</div>
 			</nav>
@@ -60,6 +61,15 @@
 					    	<option value="">Este</option>
 					    </select>
 					    <button class="btn btn-blue btn-md">Sub Almacen</button>
+					</div>
+					<div class="Form-inputGroup">
+						<br>
+						<br>
+						<br>
+					    <form onsubmit="return false;" action="">
+				    		<input type="text" class="Form-inputText-small ac_input" size="40" id="producto" placeholder="Producto" autofocus />
+					    	<button class="btn btn-blue" id="nuevoProducto">Nuevo</button>
+					    </form>
 					</div>
 				</div>
 				<div class="Container-item-right">

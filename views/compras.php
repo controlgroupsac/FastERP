@@ -40,6 +40,7 @@
 					<li class="Menu-item"><a href="compras.php" class="Menu-link active">Compras</a></li>
 					<li class="Menu-item"><a href="#" class="Menu-link">Inventario</a></li>
 					<li class="Menu-item"><a href="#" class="Menu-link">Informe</a></li>
+					<li class="Menu-item"><a href="#" class="Menu-link">Ayuda</a></li>
 				</ul>
 				<div class="Menu-logoUsuario">
 					<figcaption class="Menu-logoContainer">
@@ -56,13 +57,12 @@
 			<article class="Container-item">
 				<div class="Container-item-left">
 					<div class="Form-inputGroup">
-					    <label for="proveedor" class="Form-label">Proveedor</label>
-					    <select class="Form-inputText-small Form-select" name="proveedor" id="proveedor">
-					    	<?php query_table_option("SELECT * FROM proveedor ORDER BY proveedor", 'proveedor_id', 'proveedor'); ?>
-					    </select>
-					    <span class="Form-icon icon-checkmark"></span>
-					    <button class="btn btn-blue" id="nuevoProveedor">Nuevo</button>
+						<div class="inline-block" id="div_listar_proveedor"></div> <!-- Lista de proveedores AJAX (main.js + proveedor_form_agregar + proveedor_agregar + proveedor_listar) -->
+						<div id="div_oculto_proveedor" style="display: none;"></div> <!-- Pop Up agregar proveedor -->
+					    <a class="btn btn-blue" id="nuevoProveedor">Nuevo Proveedor</a>
 					</div>
+					
+
 					<div class="Form-inputGroup inline-block">
 					    <label for="almacen" class="Form-label">Almacen</label>
 					     <select class="Form-inputText-small Form-select" name="almacen" id="almacen">
@@ -79,11 +79,15 @@
 					<div class="Form-inputGroup">
 					    <label for="referencia" class="Form-label">Referencia</label>
 					    <input type="text" class="Form-inputText-small" size="40" id="referencia" placeholder="Referencia" />
-					    <span class="Form-icon icon-checkmark"></span>
+					</div>
+					<br>
+					<div class="Form-inputGroup">
+						<div class="inline-block" style="display: none;" id="div_listar_producto"></div> <!-- Lista de productos AJAX (main.js + producto_form_agregar + producto_agregar + producto_listar) -->
+						<div id="div_oculto_producto" style="display: none;"></div> <!-- Pop Up agregar producto -->
+					    <button class="btn btn-blue" id="nuevoProducto">Agregar Nuevo Producto</button>
 					</div>
 				</div>
 				<div class="Container-item-right">
-					<br>
 					<div class="checkbox">
 				        <label>
 				        	<input type="checkbox" name="estado" /> Creado
@@ -113,68 +117,9 @@
 			<div class="clear"></div>
 
 			<article class="Container-item">
-				<table class="Table Table-striped Table-bordered">
-					<thead>
-						<tr>
-							<th width="50%">Producto <span class="icon-embed"></span></th>
-							<th width="9%">Unidad <span class="icon-embed"></span></th>
-							<th width="8%">Cant. <span class="icon-embed"></span></th>
-							<th width="10%">Precio <span class="icon-embed"></span></th>
-							<th width="10%">Desc. <span class="icon-embed"></span></th>
-							<th width="12%">Sub Total <span class="icon-embed"></span></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Cerveza Cuzqueña blanca 610 ml</td>
-							<td>caja</td>
-							<td>32</td>
-							<td>47.00</td>
-							<td>0.00</td>
-							<td>1504.00</td>
-						</tr>
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-					</tbody>
-				</table>
+				<button class="btn btn-green btn-lg btn-lg right" id="nuevoCompraDet">Agregar</button>
+				<div id="div_listar_compra_det"></div> <!-- Lista de COMPRA DETALLES AJAX (main.js + compra_det_form_agregar + compra_det_agregar + compra_det_listar) -->
+				<div id="div_oculto_compra_det" style="display: none;"></div> <!-- Pop Up agregar COMPRA DETALLES -->
 			</article>
 			<article class="Container-item">
 				<div class="Container-item-left">
@@ -205,7 +150,7 @@
 					</div>
 				</div>
 			</article>
-			
+
 			<div class="clear"></div>
 
 		</section>
@@ -214,11 +159,15 @@
 			<p>Control Group SAC Derechos de autor ® 2015</p>
 		</footer>
 
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
-		<link rel="stylesheet" type="text/css" href="js/vendor/jBox.css">
-	    <script type="text/javascript" src="js/vendor/jBox.min.js"></script>
+
+
+        <script language="javascript" type="text/javascript" src="js/vendor/table/jquery-1.3.2.min.js"></script>
+        <script language="javascript" type="text/javascript" src="js/vendor/table/jquery.blockUI.js"></script>
+        <script language="javascript" type="text/javascript" src="js/vendor/table/jquery.validate.1.5.2.js"></script>
+
         <script src="js/main.js"></script>
     </body>
 </html>
