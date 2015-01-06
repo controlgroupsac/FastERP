@@ -69,7 +69,24 @@ function query_table_option($query, $id, $campo){ /*Consuta de una tabla, parame
     $row_table = mysql_fetch_assoc($table);
 
     do{
-        echo "<option value='" .$row_table[$id]. "'>" .$row_table[$campo]. "</option>";
+        echo "<option value='" .$row_table[$id]. "' >" .$row_table[$campo]. "</option>";
+    }while ($row_table = mysql_fetch_assoc($table));
+}
+
+function query_table_option_comparar($query, $id, $campo, $id2){ /*Consuta de dos tablas, parametros seleccionados para un option en una etiqueta <select>, donde una de las etiquetas sera "selected"*/
+    include("../config/conexion.php");
+
+    mysql_select_db($database_fastERP, $fastERP);
+    $table = mysql_query($query, $fastERP) or die(mysql_error());
+    $totalRows_table = mysql_num_rows($table);
+    $row_table = mysql_fetch_assoc($table);
+
+    do{
+        if($row_table[$id] == $id2) { 
+            echo "<option value='" .$row_table[$id]. "' selected>" .$row_table[$campo]. "</option>";
+        }else {
+            echo "<option value='" .$row_table[$id]. "'>" .$row_table[$campo]. "</option>";
+        }
     }while ($row_table = mysql_fetch_assoc($table));
 }
 

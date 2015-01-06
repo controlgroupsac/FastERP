@@ -16,6 +16,11 @@ function fn_cerrar(){
     onUnblock: function(){
       $("#div_oculto_proveedor").html("");
       $("#div_oculto_producto").html("");
+      $("#div_oculto_compra_det").html("");
+
+      fn_buscar_compra_det();
+      fn_buscar_proveedor();
+      fn_buscar_producto();
     }
   }); 
 };
@@ -87,7 +92,6 @@ $("#nuevoCompraDet").click(function () {
     }); 
   });
 });
-
 function fn_buscar_compra_det(){
   var str = $("#frm_buscar_compra_det").serialize();
   console.log(str);
@@ -100,6 +104,33 @@ function fn_buscar_compra_det(){
     }
   });
 }
+function fn_eliminar_compra_det(compra_det_id){
+  var respuesta = confirm("Desea eliminar esta compra?");
+  if (respuesta){
+    $.ajax({
+      url: '../models/compra_det_eliminar.php',
+      data: 'compra_det_id=' + compra_det_id,
+      type: 'post',
+      success: function(data){
+        if(data!="")
+          alert(data);
+        fn_buscar_compra_det()
+      }
+    });
+  }
+}
+function fn_mostrar_frm_modificar_compra_det(compra_det_id){
+  $("#div_oculto_compra_det").load("../models/compra_det_form_modificar.php", {compra_det_id: compra_det_id}, function(){
+    $.blockUI({
+      message: $('#div_oculto_compra_det'),
+      css:{
+        top: '5%'
+      }
+    }); 
+  });
+};
+
+
 
 
 fn_buscar_compra_det();
