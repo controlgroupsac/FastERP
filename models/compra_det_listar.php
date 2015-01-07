@@ -33,7 +33,7 @@
 			<td class="text-center"><?php echo $row_table['unidad']; ?></td>
 			<td class="text-center"><?php echo $row_table['cantidad']; ?></td>
 			<td class="text-center"><?php echo $row_table['precio_compra']; ?></td>
-			<td class="text-center"><?php echo $row_table['descuento']."%"; ?></td>
+			<td class="text-center"><?php echo $row_table['descuento']; ?></td>
 			<td class="text-center">
 				<?php 
 					$monto = $row_table['cantidad'] * $row_table['precio_compra'];

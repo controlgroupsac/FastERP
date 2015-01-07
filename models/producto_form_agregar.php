@@ -22,7 +22,7 @@
                         <select class="Form-inputText-small Form-select" name="unidad_id" id="unidad_id">
                             <?php query_table_option("SELECT * FROM unidad ORDER BY unidad", 'unidad_id', 'unidad'); ?>
                         </select>
-                        <input type="text" class="Form-inputText-small" size="4" name="unidad_cont" id="unidad_cont" value="18" required />
+                        <input type="text" class="Form-inputText-small" size="4" name="unidad_cont" id="unidad_cont" value="18" title="unidades que contiene el producto Ej. Pack X12 = unidad_id y unidad_cont = 12 bot." required />
                     </div> 
                 </td>
             </tr>

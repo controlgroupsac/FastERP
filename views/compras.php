@@ -56,6 +56,7 @@
 			<h1 class="title">Registro de Compra</h1>
 			<article class="Container-item">
 				<div class="Container-item-left">
+					<input type="hidden" name="usuario_id" id="usuario_id" value="1" />
 					<div class="Form-inputGroup">
 						<div class="inline-block" id="div_listar_proveedor"></div> <!-- Lista de proveedores AJAX (main.js + proveedor_form_agregar + proveedor_agregar + proveedor_listar) -->
 						<div id="div_oculto_proveedor" style="display: none;"></div> <!-- Pop Up agregar proveedor -->
@@ -64,14 +65,14 @@
 					
 
 					<div class="Form-inputGroup inline-block">
-					    <label for="almacen" class="Form-label">Almacen</label>
-					     <select class="Form-inputText-small Form-select" name="almacen" id="almacen">
+					    <label for="almacen_id" class="Form-label">Almacen</label>
+					     <select class="Form-inputText-small Form-select" name="almacen_id" id="almacen_id">
 					    	<?php query_table_option("SELECT * FROM almacen ORDER BY almacen", 'almacen_id', 'almacen'); ?>
 					    </select>
 					</div>
 					<div class="Form-inputGroup inline-block">				    
-					    <label for="moneda" class="Form-label">Moneda</label>
-					    <select class="Form-inputText-small Form-select" id="moneda">
+					    <label for="moneda_id" class="Form-label">Moneda</label>
+					    <select class="Form-inputText-small Form-select" name="moneda_id" id="moneda_id">
 					    	<option value="soles">Soles</option>
 					    	<option value="dolares">Dolares</option>
 					    </select>
@@ -90,10 +91,10 @@
 				<div class="Container-item-right">
 					<div class="checkbox">
 				        <label>
-				        	<input type="checkbox" name="estado" /> Creado
+				        	<input type="checkbox" name="creado" name="creado" /> Creado
 			        	</label>
 				        <label>
-				        	<input type="checkbox" name="estado" /> Recibido
+				        	<input type="checkbox" name="recibido" name="recibido" /> Recibido
 			        	</label>
 				    </div>
 					<div class="Form-inputGroup">
@@ -102,13 +103,13 @@
 					    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					    </label>
-					    <input type="date" class="Form-inputText-small" id="fecha" />
+					    <input type="date" class="Form-inputText-small" name="fecha" id="fecha" />
 					    <span class="Form-icon icon-checkmark"></span>
 					</div>
 
 					<div class="Form-inputGroup">
-					    <label for="fechaPago" class="Form-label">Fecha de pago</label>
-					    <input type="date" class="Form-inputText-small" id="fechaPago" />
+					    <label for="fecha_pago" class="Form-label">Fecha de pago</label>
+					    <input type="date" class="Form-inputText-small" name="fecha_pago" id="fecha_pago" />
 					    <span class="Form-icon icon-checkmark"></span>
 					</div>
 				</div>
@@ -118,13 +119,16 @@
 
 			<article class="Container-item">
 				<button class="btn btn-green btn-lg btn-lg right" id="nuevoCompraDet">Agregar</button>
+				<div id="div_compra_agregar"></div> <!-- Insertando datos de compra -->
 				<div id="div_listar_compra_det"></div> <!-- Lista de COMPRA DETALLES AJAX (main.js + compra_det_form_agregar + compra_det_agregar + compra_det_listar) -->
 				<div id="div_oculto_compra_det" style="display: none;"></div> <!-- Pop Up agregar COMPRA DETALLES -->
 			</article>
 			<article class="Container-item">
 				<div class="Container-item-left">
 					<div class="Form-inputGroup">
-						<textarea class="Form-inputText-small Form-textarea" cols="80" rows="20" placeholder="Notas y Observaciones"></textarea>
+						<textarea class="Form-inputText-small Form-textarea text-left" name="notas" id="notas" cols="80" rows="20" placeholder="Notas y Observaciones">
+							Notas y Observaciones
+						</textarea>
 					</div>
 					<div class="Form-inputGroup">
 						<input type="checkbox" id="finalizar" class="switch" /> 
@@ -132,22 +136,8 @@
 					</div>
 				</div>
 				<div class="Container-item-right">
-					<div class="Form-inputGroup">
-					    <label for="neto" class="Form-label">Neto</label>
-					    <input type="text" class="Form-inputText-small" id="neto" placeholder="0.00" />
-					</div>
-					<div class="Form-inputGroup">
-					    <label for="descuento" class="Form-label">Descuento</label>
-					    <input type="text" class="Form-inputText-small" id="descuento" placeholder="0.00" />
-					</div>
-					<div class="Form-inputGroup">
-					    <label for="impuestos" class="Form-label">Impuestos</label>
-					    <input type="text" class="Form-inputText-small" id="impuestos" placeholder="0.00" />
-					</div>
-					<div class="Form-inputGroup">
-					    <label for="total" class="Form-label">Total</label>
-					    <input type="text" class="Form-inputText-small" id="total" placeholder="0.00" />
-					</div>
+					<div id="div_listar_compra_precios"></div> <!-- Lista precios (main.js + compra_precio_form_agregar + compra_precio_agregar + compra_precio_listar) -->
+					<div id="div_oculto_compra_precios" style="display: none;"></div> <!-- Pop Up agregar COMPRA PRECIOS -->
 				</div>
 			</article>
 

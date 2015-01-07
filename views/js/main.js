@@ -89,18 +89,35 @@ $("#nuevoCompraDet").click(function () {
       css:{
         top: '5%'
       }
-    }); 
+    });
   });
+
+  var compra = $("#frm_compra_agregar").serialize();
+  $.ajax({
+    url: '../models/compra_agregar.php',
+    type: 'get',
+    data: compra,
+    success: function(data){
+      $("#div_compra_agregar").html(data);
+    }
+  })
 });
 function fn_buscar_compra_det(){
   var str = $("#frm_buscar_compra_det").serialize();
-  console.log(str);
   $.ajax({
     url: '../models/compra_det_listar.php',
     type: 'get',
     data: str,
     success: function(data){
       $("#div_listar_compra_det").html(data);
+    }
+  });
+  $.ajax({
+    url: '../models/compra_det_listar_precios.php',
+    type: 'get',
+    data: str,
+    success: function(data){
+      $("#div_listar_compra_precios").html(data);
     }
   });
 }

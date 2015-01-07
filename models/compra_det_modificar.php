@@ -4,7 +4,7 @@
 
 	/*verificamos si las variables se envian*/
 	if(empty($_POST['producto_id']) || empty($_POST['cantidad']) || empty($_POST['precio_compra']) || 
-	   empty($_POST['descuento']) || empty($_POST['unidad_id'])){
+	   empty($_POST['unidad_id'])){
 		echo "Usted no a llenado todos los campos";
 		exit;
 	}
