@@ -1,4 +1,4 @@
-<?php 
+<?php
     include "../config/conexion.php"; 
     include("../queries/query.php"); 
 ?>
@@ -6,7 +6,7 @@
 <form action="javascript: fn_agregar_compra_det();" method="post" id="frm_compra_det">
     <table class="Table Table-striped Table-bordered">
         <tbody>
-            <input type="hidden" name="compra_id" id="compra_id" value="1" />
+            <input type="text" name="compra_id" id="compra_id" value="<?php echo $_COOKIE['compra_id']; ?>" />
             <tr>
                 <td>
                     <div class="Form-inputGroup inline-block">

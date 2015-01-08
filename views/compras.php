@@ -1,4 +1,10 @@
-<?php include("../queries/query.php"); ?>
+<?php 
+	include("../queries/query.php"); 
+
+    $query = "SELECT compra_id FROM compra ORDER BY compra_id DESC LIMIT 1";
+    $compra_id = query_table_campo($query, "compra_id") + 1;
+    setcookie("compra_id", $compra_id, time()+60*60, "/");
+?>
 
 
 <!DOCTYPE html>
@@ -54,75 +60,81 @@
 
 		<section class="Container Container-1x">
 			<h1 class="title">Registro de Compra</h1>
-			<article class="Container-item">
-				<div class="Container-item-left">
-					<input type="hidden" name="usuario_id" id="usuario_id" value="1" />
-					<div class="Form-inputGroup">
-						<div class="inline-block" id="div_listar_proveedor"></div> <!-- Lista de proveedores AJAX (main.js + proveedor_form_agregar + proveedor_agregar + proveedor_listar) -->
-						<div id="div_oculto_proveedor" style="display: none;"></div> <!-- Pop Up agregar proveedor -->
-					    <a class="btn btn-blue" id="nuevoProveedor">Nuevo Proveedor</a>
-					</div>
-					
+			<form action="javascript: fn_agregar_compra();" method="post" id="frm_compra_agregar" disabled>
+				<article class="Container-item">
+					<div class="Container-item-left">
+						<input type="hidden" name="usuario_id" id="usuario_id" value="1" />
+						<div class="Form-inputGroup">
+							<div class="inline-block" id="div_listar_proveedor">
+								
+							</div> <!-- Lista de proveedores AJAX (main.js + proveedor_form_agregar + proveedor_agregar + proveedor_listar) -->
+							<div id="div_oculto_proveedor" style="display: none;"></div> <!-- Pop Up agregar proveedor -->
+						    <a class="btn btn-blue" id="nuevoProveedor">Nuevo Proveedor</a>
+						</div>
+						
 
-					<div class="Form-inputGroup inline-block">
-					    <label for="almacen_id" class="Form-label">Almacen</label>
-					     <select class="Form-inputText-small Form-select" name="almacen_id" id="almacen_id">
-					    	<?php query_table_option("SELECT * FROM almacen ORDER BY almacen", 'almacen_id', 'almacen'); ?>
-					    </select>
+						<div class="Form-inputGroup inline-block">
+						    <label for="almacen_id" class="Form-label">Almacen</label>
+						     <select class="Form-inputText-small Form-select" name="almacen_id" id="almacen_id">
+						    	<?php query_table_option("SELECT * FROM almacen ORDER BY almacen", 'almacen_id', 'almacen'); ?>
+						    </select>
+						</div>
+						<div class="Form-inputGroup inline-block">				    
+						    <label for="moneda_id" class="Form-label">Moneda</label>
+						    <select class="Form-inputText-small Form-select" name="moneda_id" id="moneda_id">
+						    	<option value="1">Soles</option>
+						    	<option value="2">Dolares</option>
+						    </select>
+						</div>
+						<div class="Form-inputGroup">
+						    <label for="referencia" class="Form-label">Referencia</label>
+						    <input type="text" class="Form-inputText-small" size="40" name="referencia" id="referencia" value="Compra Nro 000-2" placeholder="Referencia" />
+						</div>
+						<br>
+						<div class="Form-inputGroup">
+							<div class="inline-block" style="display: none;" id="div_listar_producto"></div> <!-- Lista de productos AJAX (main.js + producto_form_agregar + producto_agregar + producto_listar) -->
+							<div id="div_oculto_producto" style="display: none;"></div> <!-- Pop Up agregar producto -->
+						    <button class="btn btn-blue" id="nuevoProducto">Agregar Nuevo Producto</button>
+						</div>
 					</div>
-					<div class="Form-inputGroup inline-block">				    
-					    <label for="moneda_id" class="Form-label">Moneda</label>
-					    <select class="Form-inputText-small Form-select" name="moneda_id" id="moneda_id">
-					    	<option value="soles">Soles</option>
-					    	<option value="dolares">Dolares</option>
-					    </select>
-					</div>
-					<div class="Form-inputGroup">
-					    <label for="referencia" class="Form-label">Referencia</label>
-					    <input type="text" class="Form-inputText-small" size="40" id="referencia" placeholder="Referencia" />
-					</div>
-					<br>
-					<div class="Form-inputGroup">
-						<div class="inline-block" style="display: none;" id="div_listar_producto"></div> <!-- Lista de productos AJAX (main.js + producto_form_agregar + producto_agregar + producto_listar) -->
-						<div id="div_oculto_producto" style="display: none;"></div> <!-- Pop Up agregar producto -->
-					    <button class="btn btn-blue" id="nuevoProducto">Agregar Nuevo Producto</button>
-					</div>
-				</div>
-				<div class="Container-item-right">
-					<div class="checkbox">
-				        <label>
-				        	<input type="checkbox" name="creado" name="creado" /> Creado
-			        	</label>
-				        <label>
-				        	<input type="checkbox" name="recibido" name="recibido" /> Recibido
-			        	</label>
-				    </div>
-					<div class="Form-inputGroup">
-					    <label for="fecha" class="Form-label">
-					    	Fecha 
-					    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					    </label>
-					    <input type="date" class="Form-inputText-small" name="fecha" id="fecha" />
-					    <span class="Form-icon icon-checkmark"></span>
-					</div>
+					<div class="Container-item-right">
+						<div class="checkbox">
+					        <label>
+					        	<input type="checkbox" name="creado" name="creado" /> Creado
+				        	</label>
+					        <label>
+					        	<input type="checkbox" name="recibido" name="recibido" /> Recibido
+				        	</label>
+					    </div>
+						<div class="Form-inputGroup">
+						    <label for="fecha" class="Form-label">
+						    	Fecha 
+						    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						    	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						    </label>
+						    <input type="text" class="Form-inputText-small" name="fecha" id="fecha" min="2015-01-01" value="<?php echo date('Y-m-d'); ?>" />
+						    <span class="Form-icon icon-checkmark"></span>
+						</div>
 
-					<div class="Form-inputGroup">
-					    <label for="fecha_pago" class="Form-label">Fecha de pago</label>
-					    <input type="date" class="Form-inputText-small" name="fecha_pago" id="fecha_pago" />
-					    <span class="Form-icon icon-checkmark"></span>
+						<div class="Form-inputGroup">
+						    <label for="fecha_pago" class="Form-label">Fecha de pago</label>
+						    <input type="text" class="Form-inputText-small" name="fecha_pago" id="fecha_pago" min="2015-01-01" value="<?php echo date('Y-m-d'); ?>" />
+						    <span class="Form-icon icon-checkmark"></span>
+						</div>
 					</div>
-				</div>
-			</article>
-			
-			<div class="clear"></div>
+				</article>
+				
+				<div class="clear"></div>
 
-			<article class="Container-item">
-				<button class="btn btn-green btn-lg btn-lg right" id="nuevoCompraDet">Agregar</button>
-				<div id="div_compra_agregar"></div> <!-- Insertando datos de compra -->
-				<div id="div_listar_compra_det"></div> <!-- Lista de COMPRA DETALLES AJAX (main.js + compra_det_form_agregar + compra_det_agregar + compra_det_listar) -->
-				<div id="div_oculto_compra_det" style="display: none;"></div> <!-- Pop Up agregar COMPRA DETALLES -->
-			</article>
+				<article class="Container-item">
+					<button type="submit" class="btn btn-green btn-lg btn-lg right" id="nuevoCompraDet">Agregar</button>
+					<div id="div_compra_agregar"></div> <!-- Insertando datos de compra -->
+					<div id="div_listar_compra_det"></div> <!-- Lista de COMPRA DETALLES AJAX (main.js + compra_det_form_agregar + compra_det_agregar + compra_det_listar) -->
+					<div id="div_oculto_compra_det" style="display: none;"></div> <!-- Pop Up agregar COMPRA DETALLES -->
+				</article>
+			</form>
+
+
 			<article class="Container-item">
 				<div class="Container-item-left">
 					<div class="Form-inputGroup">
@@ -152,6 +164,10 @@
   
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+
+  
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/validate.min.js"><\/script>')</script>
 
 
         <script language="javascript" type="text/javascript" src="js/vendor/table/jquery-1.3.2.min.js"></script>

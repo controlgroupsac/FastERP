@@ -39,7 +39,6 @@ $("#nuevoProveedor").click(function () {
 
 function fn_buscar_proveedor(){
   var str = $("#frm_buscar_proveedor").serialize();
-  console.log(str);
   $.ajax({
     url: '../models/proveedor_listar.php',
     type: 'get',
@@ -67,7 +66,6 @@ $("#nuevoProducto").click(function () {
 
 function fn_buscar_producto(){
   var str = $("#frm_buscar_producto").serialize();
-  console.log(str);
   $.ajax({
     url: '../models/producto_listar.php',
     type: 'get',
@@ -81,6 +79,45 @@ function fn_buscar_producto(){
 
 
 
+
+
+
+function fn_agregar_compra(){
+  var compra = $("#frm_compra_agregar").serialize();
+  $.ajax({
+    url: '../models/compra_agregar.php',
+    data: compra,
+    type: 'post',
+    success: function(data){
+      if(data != "")
+        alert(data);
+    }
+  });
+};
+
+
+$("#finalizar:checked").click(function(){
+  // var notas = document.getElementById('notas').value;
+  // var neto = document.getElementById('neto').value;
+  // var impuesto1 = document.getElementById('impuesto1').value;
+  // var total = document.getElementById('total').value;
+  console.log("yay");
+})
+/*$("#finalizar").click(function() {
+  $.ajax({
+    data: {
+      notas: notas, 
+      neto: neto,
+      impuesto1: impuesto1, 
+      total: total 
+    },
+    url: '../models/compra_agregar.php',
+    type: "get"
+  });
+});*/
+
+
+
 /*COMPRA DETALLE*/
 $("#nuevoCompraDet").click(function () {
   $("#div_oculto_compra_det").load("../models/compra_det_form_agregar.php", function(){
@@ -91,16 +128,6 @@ $("#nuevoCompraDet").click(function () {
       }
     });
   });
-
-  var compra = $("#frm_compra_agregar").serialize();
-  $.ajax({
-    url: '../models/compra_agregar.php',
-    type: 'get',
-    data: compra,
-    success: function(data){
-      $("#div_compra_agregar").html(data);
-    }
-  })
 });
 function fn_buscar_compra_det(){
   var str = $("#frm_buscar_compra_det").serialize();

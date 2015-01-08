@@ -25,7 +25,6 @@
 ?>
 <h2 class="title">Modificar Detalle Compra</h2>
 <form action="javascript: fn_modificar();" method="post" id="frm_compra_det">
-	<input type="hidden" id="compra_id" name="compra_id" value="<?=$row_table['compra_id']?>" />
 	<input type="hidden" id="compra_det_id" name="compra_det_id" value="<?=$row_table['compra_det_id']?>" />
     <table class="Table Table-striped Table-bordered">
         <tbody>

@@ -31,9 +31,9 @@
 </div>
 <div class="Form-inputGroup">
     <label for="impuesto" class="Form-label">Impuestos</label>
-    <input type="text" class="Form-inputText-small text-right" id="impuesto1" id="impuesto1" value="<?php echo @$suma_subtotal * 0.18; ?>" placeholder="0.00" />
+    <input type="text" class="Form-inputText-small text-right" name="impuesto1" id="impuesto1" value="<?php echo @$suma_subtotal * 0.18; ?>" placeholder="0.00" />
 </div>
 <div class="Form-inputGroup">
     <label for="total" class="Form-label">Total</label>
-    <input type="text" class="Form-inputText-small text-right" id="total" value="<?php echo @$suma_subtotal + (@$suma_subtotal * 0.18); ?>" placeholder="0.00" />
+    <input type="text" class="Form-inputText-small text-right" name="total" id="total" value="<?php echo @$suma_subtotal + (@$suma_subtotal * 0.18); ?>" placeholder="0.00" />
 </div>
