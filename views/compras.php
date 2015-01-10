@@ -60,7 +60,8 @@
 
 		<section class="Container Container-1x">
 			<h1 class="title">Registro de Compra</h1>
-			<form action="javascript: fn_agregar_compra();" method="post" id="frm_compra_agregar" disabled>
+			<div id="bloquear">
+			<form action="javascript: fn_agregar_compra();" method="post" id="frm_compra_agregar">
 				<article class="Container-item">
 					<div class="Container-item-left">
 						<input type="hidden" name="usuario_id" id="usuario_id" value="1" />
@@ -88,7 +89,7 @@
 						</div>
 						<div class="Form-inputGroup">
 						    <label for="referencia" class="Form-label">Referencia</label>
-						    <input type="text" class="Form-inputText-small" size="40" name="referencia" id="referencia" value="Compra Nro 000-2" placeholder="Referencia" />
+						    <input type="text" class="Form-inputText-small" size="40" name="referencia" id="referencia" value="" placeholder="Referencia" />
 						</div>
 						<br>
 						<div class="Form-inputGroup">
@@ -142,14 +143,20 @@
 							Notas y Observaciones
 						</textarea>
 					</div>
-					<div class="Form-inputGroup">
-						<input type="checkbox" id="finalizar" class="switch" /> 
-					    <label for="finalizar" class="Form-label">Finalizar</label>
-					</div>
 				</div>
 				<div class="Container-item-right">
 					<div id="div_listar_compra_precios"></div> <!-- Lista precios (main.js + compra_precio_form_agregar + compra_precio_agregar + compra_precio_listar) -->
 					<div id="div_oculto_compra_precios" style="display: none;"></div> <!-- Pop Up agregar COMPRA PRECIOS -->
+				</div>
+			</article>
+			</div>
+
+			<article class="Container-item">
+				<div class="Container-item-left">
+					<div class="Form-inputGroup">
+						<input type="checkbox" id="finalizar" class="switch" /> 
+					    <label for="finalizar" class="Form-label">Finalizar</label>
+					</div>
 				</div>
 			</article>
 
@@ -175,5 +182,10 @@
         <script language="javascript" type="text/javascript" src="js/vendor/table/jquery.validate.1.5.2.js"></script>
 
         <script src="js/main.js"></script>
+        <script type="text/javascript">
+        	fn_buscar_compra_det();
+        	fn_buscar_proveedor();
+        	fn_buscar_producto();
+        </script>
     </body>
 </html>

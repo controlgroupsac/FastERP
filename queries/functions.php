@@ -1,5 +1,4 @@
 <?php
-
 include("../config/conexion.php");
 
 if (!function_exists("GetSQLValueString")) {

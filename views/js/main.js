@@ -96,26 +96,27 @@ function fn_agregar_compra(){
 };
 
 
-$("#finalizar:checked").click(function(){
-  // var notas = document.getElementById('notas').value;
-  // var neto = document.getElementById('neto').value;
-  // var impuesto1 = document.getElementById('impuesto1').value;
-  // var total = document.getElementById('total').value;
-  console.log("yay");
-})
-/*$("#finalizar").click(function() {
-  $.ajax({
-    data: {
-      notas: notas, 
-      neto: neto,
-      impuesto1: impuesto1, 
-      total: total 
-    },
-    url: '../models/compra_agregar.php',
-    type: "get"
-  });
-});*/
-
+$('#finalizar').change(function() {
+  if($(this).is(":checked")) {
+    var notas = document.getElementById('notas').value;
+    var neto = document.getElementById('neto').value;
+    var descuento = document.getElementById('descuento').value;
+    var impuesto1 = document.getElementById('impuesto1').value;
+    var total = document.getElementById('total').value;
+    $.ajax({
+      data: "notas=" +notas+ "&neto=" +neto+ "&descuento_p=" +descuento+ "&impuesto1=" +impuesto1+ "&total=" +total,
+      url: '../models/compra_agregar_finalizar.php',
+      type: "post"
+    });
+    $("#bloquear").block({
+       message: "",
+       css: { backgroundColor: '#fff', color: '#fff'}
+    })
+    // console.log("yay" +notas + neto + descuento + impuesto1 + total);
+  }else {
+    $("#bloquear").unblock();
+  }
+});
 
 
 /*COMPRA DETALLE*/
@@ -173,10 +174,3 @@ function fn_mostrar_frm_modificar_compra_det(compra_det_id){
     }); 
   });
 };
-
-
-
-
-fn_buscar_compra_det();
-fn_buscar_proveedor();
-fn_buscar_producto();

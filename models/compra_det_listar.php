@@ -4,9 +4,10 @@
 
     $query = "SELECT compra_det.compra_det_id, compra_det.cantidad, compra_det.precio_compra, compra_det.descuento, 
     				 producto.producto, unidad.unidad
-    		  FROM compra_det, producto, unidad
-    		  -- WHERE compra.compra_id = compra_det.compra_id
-    		  WHERE producto.producto_id = compra_det.producto_id
+    		  FROM compra, compra_det, producto, unidad
+    		  WHERE compra_det.compra_id = $_COOKIE[compra_id]
+    		  AND compra.compra_id = compra_det.compra_id
+    		  AND producto.producto_id = compra_det.producto_id
     		  AND unidad.unidad_id = compra_det.unidad_id";
 
     mysql_select_db($database_fastERP, $fastERP);
